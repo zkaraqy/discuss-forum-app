@@ -13,7 +13,7 @@ const ActionType = {
 function receiveThreadDetailActionCreator(threadDetail) {
   return {
     type: ActionType.RECEIVE_THREAD_DETAIL,
-    payload: { threadDetail },
+    payload: { threadDetails },
   };
 }
 
