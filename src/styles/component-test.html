@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Styling Test</title>
+  <link rel="stylesheet" href="../.storybook/tailwind.css">
+  <style>
+    body {
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .component-test {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Component Styling Test</h1>
+  
+  <div class="component-test">
+    <h2>Button Component</h2>
+    <button class="btn">Default Button</button>
+    <button class="btn btn-primary">Primary Button</button>
+    <button class="btn btn-secondary">Secondary Button</button>
+    <button class="btn btn-error">Error Button</button>
+    <button class="btn" disabled>Disabled Button</button>
+    <button class="btn btn-sm">Small Button</button>
+    <button class="btn btn-lg">Large Button</button>
+  </div>
+  
+  <div class="component-test">
+    <h2>Input Component</h2>
+    <label class="label">Default Input</label>
+    <input type="text" class="input" placeholder="Default input">
+    
+    <label class="label">Bordered Input</label>
+    <input type="text" class="input input-bordered" placeholder="Bordered input">
+    
+    <label class="label">Primary Input</label>
+    <input type="text" class="input input-primary" placeholder="Primary input">
+  </div>
+  
+  <div class="component-test">
+    <h2>Fieldset Component</h2>
+    <fieldset class="fieldset">
+      <legend>Form Group</legend>
+      <label class="label">Input in Fieldset</label>
+      <input type="text" class="input" placeholder="Input in fieldset">
+    </fieldset>
+  </div>
+</body>
+</html>
