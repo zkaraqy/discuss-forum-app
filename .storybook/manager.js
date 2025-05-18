@@ -16,7 +16,7 @@ addons.setConfig({
     fullscreen: { hidden: true }, // Hide fullscreen button
   },
   // Enable quick navigation
-  shortcuts: { 
+  shortcuts: {
     next: 'alt+right',
     previous: 'alt+left',
   },

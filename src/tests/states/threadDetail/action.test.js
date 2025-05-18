@@ -3,8 +3,6 @@ import {
   ActionType,
   asyncReceiveThreadDetail,
   asyncUpVoteThreadDetail,
-  asyncDownVoteThreadDetail,
-  asyncNeutralVoteThreadDetail,
   receiveThreadDetailActionCreator,
   clearThreadDetailActionCreator,
   upVoteThreadDetailActionCreator,
@@ -138,7 +136,9 @@ describe('asyncReceiveThreadDetail thunk', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(api.getThreadDetail).toHaveBeenCalledWith(threadId);
-    expect(dispatch).toHaveBeenCalledWith(receiveThreadDetailActionCreator(threadDetail));
+    expect(dispatch).toHaveBeenCalledWith(
+      receiveThreadDetailActionCreator(threadDetail)
+    );
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
 
@@ -184,7 +184,9 @@ describe('asyncUpVoteThreadDetail thunk', () => {
     await asyncUpVoteThreadDetail(threadId)(dispatch, getState);
 
     // Assert
-    expect(dispatch).toHaveBeenCalledWith(upVoteThreadDetailActionCreator(authUser.id));
+    expect(dispatch).toHaveBeenCalledWith(
+      upVoteThreadDetailActionCreator(authUser.id)
+    );
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(api.upVoteThread).toHaveBeenCalledWith(threadId);
     expect(dispatch).toHaveBeenCalledWith(hideLoading());

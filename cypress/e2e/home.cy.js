@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // import cy from 'cypress';
 // import { beforeEach, describe, it } from 'vitest';
 
@@ -17,7 +18,7 @@ describe('Home Page', () => {
     cy.contains('Login Berhasil!').should('be.visible');
 
     // Wait for redirect to home page
-    cy.url().should('eq', Cypress.config().baseUrl + '/');
+    cy.url().should('eq', `${Cypress.config().baseUrl  }/`);
   });
 
   it('should display the header and navigation', () => {
@@ -35,7 +36,7 @@ describe('Home Page', () => {
     cy.get('#button-add-thread').click();
 
     // Select should have options
-    cy.url().should('eq', Cypress.config().baseUrl + '/thread/form');
+    cy.url().should('eq', `${Cypress.config().baseUrl  }/thread/form`);
   });
 
   it('should navigate to thread detail when clicking on a thread title', () => {

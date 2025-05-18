@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import ThreadItem from '../../components/ThreadItem';
+import React from 'react';
 
 // Mock child components
 vi.mock('../../components/UserAvatar', () => ({
@@ -42,9 +43,12 @@ describe('ThreadItem component', () => {
   it('should render correctly with provided props', () => {
     // Act
     renderWithRouter(<ThreadItem {...mockProps} />);
-    
+
     // Assert
-    expect(screen.getByText('Thread Title')).toBeInTheDocument();    expect(screen.getByText('This is the body of the thread')).toBeInTheDocument();
+    expect(screen.getByText('Thread Title')).toBeInTheDocument();
+    expect(
+      screen.getByText('This is the body of the thread')
+    ).toBeInTheDocument();
     expect(screen.getByText('react')).toBeInTheDocument();
     expect(screen.getAllByText(/John Doe/).length).toBeGreaterThan(0);
     expect(screen.getByTestId('user-avatar')).toBeInTheDocument();
@@ -58,15 +62,10 @@ describe('ThreadItem component', () => {
       ...mockThread,
       body: longBody,
     };
-    
+
     // Act
-    renderWithRouter(
-      <ThreadItem
-        {...mockProps}
-        thread={threadWithLongBody}
-      />
-    );
-    
+    renderWithRouter(<ThreadItem {...mockProps} thread={threadWithLongBody} />);
+
     // Assert
     expect(screen.getByText(/^a{100}\.\.\.$/)).toBeInTheDocument(); // Should show first 100 chars with ellipsis
     expect(screen.getByText('Baca selengkapnya')).toBeInTheDocument();
@@ -75,14 +74,14 @@ describe('ThreadItem component', () => {
   it('should call onUpVote when up vote button is clicked', async () => {
     // Act
     renderWithRouter(<ThreadItem {...mockProps} />);
-    
+
     // Setup userEvent
     const user = userEvent.setup();
-    
+
     // Find and click the up vote button (first button in the component)
     const upVoteButton = screen.getAllByRole('button')[0];
     await user.click(upVoteButton);
-    
+
     // Assert
     expect(mockProps.onUpVote).toHaveBeenCalledWith(mockThread.id);
   });
@@ -90,14 +89,14 @@ describe('ThreadItem component', () => {
   it('should call onDownVote when down vote button is clicked', async () => {
     // Act
     renderWithRouter(<ThreadItem {...mockProps} />);
-    
+
     // Setup userEvent
     const user = userEvent.setup();
-    
+
     // Find and click the down vote button (second button in the component)
     const downVoteButton = screen.getAllByRole('button')[1];
     await user.click(downVoteButton);
-    
+
     // Assert
     expect(mockProps.onDownVote).toHaveBeenCalledWith(mockThread.id);
   });

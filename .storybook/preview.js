@@ -1,4 +1,3 @@
-import React from 'react';
 import './tailwind.css';
 // Only import the minimal CSS needed
 
@@ -8,7 +7,7 @@ const preview = {
     // Minimal parameters for better performance
     actions: {
       argTypesRegex: '^on[A-Z].*',
-      disable: true // Disable actions for performance
+      disable: true, // Disable actions for performance
     },
     controls: {
       matchers: {
@@ -27,7 +26,7 @@ const preview = {
     // Improve rendering performance
     renderer: {
       strictMode: false, // Disable React strict mode for performance
-    }
+    },
   },
   // Simplified decorator
   // decorators: [

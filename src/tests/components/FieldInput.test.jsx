@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import FieldInput from '../../components/FieldInput';
+import React from 'react';
 
 describe('FieldInput component', () => {
   it('should render correctly with minimal props', () => {
@@ -15,7 +16,7 @@ describe('FieldInput component', () => {
 
     // Act
     render(<FieldInput {...props} />);
-    
+
     // Assert
     expect(screen.getByText('Username')).toBeInTheDocument();
     expect(screen.getByRole('textbox')).toBeInTheDocument();
@@ -37,11 +38,11 @@ describe('FieldInput component', () => {
 
     // Act
     render(<FieldInput {...props} />);
-    
+
     // Assert
     const labelElement = screen.getByText('Email');
     const inputElement = screen.getByRole('textbox');
-    
+
     expect(labelElement).toBeInTheDocument();
     expect(labelElement).toHaveClass('custom-label');
     expect(inputElement).toBeInTheDocument();
@@ -65,13 +66,13 @@ describe('FieldInput component', () => {
     // Act
     render(<FieldInput {...props} />);
     const inputElement = screen.getByRole('textbox');
-    
+
     // Setup userEvent
     const user = userEvent.setup();
-    
+
     // Type in the input
     await user.type(inputElement, 'test');
-    
+
     // Assert
     expect(mockOnChange).toHaveBeenCalled();
   });
