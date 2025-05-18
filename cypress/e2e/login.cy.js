@@ -1,6 +1,4 @@
 /* eslint-disable no-undef */
-// import cy from 'cypress';
-// import { beforeEach, describe, it } from 'vitest';
 
 describe('Login Page', () => {
   beforeEach(() => {
