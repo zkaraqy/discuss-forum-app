@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Select from '../../components/Select';
+import React from 'react';
 
 describe('Select component', () => {
   it('should render correctly with minimal props', () => {
@@ -13,12 +14,12 @@ describe('Select component', () => {
 
     // Act
     render(<Select {...props} />);
-    
+
     // Assert
     const selectElement = screen.getByRole('combobox');
     expect(selectElement).toBeInTheDocument();
     expect(selectElement).toHaveClass('select');
-    
+
     // Check options
     const options = screen.getAllByRole('option');
     expect(options).toHaveLength(4); // 3 options + default option
@@ -40,7 +41,7 @@ describe('Select component', () => {
 
     // Act
     render(<Select {...props} />);
-    
+
     // Assert
     const options = screen.getAllByRole('option');
     expect(options).toHaveLength(3); // 2 options + default option
@@ -66,13 +67,13 @@ describe('Select component', () => {
 
     // Act
     render(<Select {...props} />);
-    
+
     // Assert
     const selectElement = screen.getByRole('combobox');
     expect(selectElement).toBeInTheDocument();
     expect(selectElement).toHaveClass('custom-select');
     expect(selectElement).toHaveValue('value2');
-    
+
     const options = screen.getAllByRole('option');
     expect(options[0]).toHaveTextContent('All Custom placeholder');
   });
@@ -87,7 +88,7 @@ describe('Select component', () => {
 
     // Act
     render(<Select {...props} />);
-    
+
     // Assert
     const options = screen.getAllByRole('option');
     expect(options).toHaveLength(2); // Only the provided options, no default
@@ -105,14 +106,14 @@ describe('Select component', () => {
 
     // Act
     render(<Select {...props} />);
-    
+
     // Setup userEvent
     const user = userEvent.setup();
-    
+
     // Select a different option
     const selectElement = screen.getByRole('combobox');
     await user.selectOptions(selectElement, 'Option 2');
-    
+
     // Assert
     expect(mockOnChange).toHaveBeenCalled();
   });

@@ -3,9 +3,6 @@ import {
   ActionType,
   asyncAddThread,
   asyncReceiveThreads,
-  asyncUpVoteThread,
-  asyncDownVoteThread,
-  asyncNeutralVoteThread,
   receiveThreadsActionCreator,
   addThreadActionCreator,
   upVoteThreadActionCreator,
@@ -209,7 +206,9 @@ describe('asyncAddThread thunk', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(api.createThread).toHaveBeenCalledWith(threadData);
-    expect(dispatch).toHaveBeenCalledWith(addThreadActionCreator(createdThread));
+    expect(dispatch).toHaveBeenCalledWith(
+      addThreadActionCreator(createdThread)
+    );
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
 });
