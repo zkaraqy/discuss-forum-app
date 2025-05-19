@@ -1,3 +1,18 @@
+/**
+ * test scenarios for authUser action creators and thunk functions
+ *
+ * - authUser action creators
+ *   - should create action correctly when setAuthUser called
+ *   - should create action correctly when unsetAuthUser called
+ *
+ * - asyncSetAuthUser thunk
+ *   - should dispatch action correctly when login success
+ *   - should dispatch action correctly when login failed
+ *
+ * - asyncUnsetAuthUser thunk
+ *   - should dispatch action correctly
+ */
+
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   ActionType,

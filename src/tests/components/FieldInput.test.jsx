@@ -4,6 +4,15 @@ import userEvent from '@testing-library/user-event';
 import FieldInput from '../../components/FieldInput';
 import React from 'react';
 
+/**
+ * test scenarios for fieldInput component
+ *
+ * - FieldInput component
+ *   - should render correctly with minimal props
+ *   - should render correctly with all props
+ *   - should call onClick when the button is clicked
+ */
+
 describe('FieldInput component', () => {
   it('should render correctly with minimal props', () => {
     // Arrange

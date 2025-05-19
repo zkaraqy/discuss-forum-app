@@ -1,3 +1,21 @@
+/**
+ * test scenarios for threadDetail action creators and thunk functions
+ *
+ * - threadDetail action creators
+ *   - should create action correctly when receiveThreadDetail called
+ *   - should create action correctly when clearThreadDetail called
+ *   - should create action correctly when upVoteThreadDetail called
+ *   - should create action correctly when downVoteThreadDetail called
+ *   - should create action correctly when neutralVoteThreadDetail called
+ *
+ * - asyncReceiveThreadDetail thunk
+ *   - should dispatch action correctly when data fetching success
+ *   - should dispatch action correctly when data fetching failed
+ *
+ * - asyncUpVoteThreadDetail thunk
+ *   - should dispatch action correctly when upvote success
+ */
+
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   ActionType,

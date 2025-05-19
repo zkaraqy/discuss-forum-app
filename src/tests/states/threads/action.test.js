@@ -1,3 +1,21 @@
+/**
+ * test scenarios for threads action creators and thunk functions
+ *
+ * - threads action creators
+ *   - should create action correctly when receiveThreads called
+ *   - should create action correctly when addThread called
+ *   - should create action correctly when upVoteThread called
+ *   - should create action correctly when downVoteThread called
+ *   - should create action correctly when neutralVoteThread called
+ *
+ * - asyncReceiveThreads thunk
+ *   - should dispatch action correctly when data fetching success
+ *   - should dispatch action correctly when data fetching failed
+ *
+ * - asyncAddThread thunk
+ *   - should dispatch action correctly when thread creation success
+ */
+
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   ActionType,

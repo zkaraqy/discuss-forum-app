@@ -1,3 +1,15 @@
+/**
+ * test scenarios for threadsReducer function
+ *
+ * - threadsReducer function
+ *   - should return the initial state when no action is provided
+ *   - should return sorted threads when given RECEIVE_THREADS action
+ *   - should add a new thread when given ADD_THREAD action
+ *   - should add user to upVotesBy and remove from downVotesBy when given UP_VOTE_THREAD action
+ *   - should add user to downVotesBy and remove from upVotesBy when given DOWN_VOTE_THREAD action
+ *   - should remove user from both upVotesBy and downVotesBy when given NEUTRAL_VOTE_THREAD action
+ */
+
 import { describe, it, expect } from 'vitest';
 import threadsReducer from '../../../states/threads/reducer';
 import { ActionType } from '../../../states/threads/action';

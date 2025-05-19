@@ -5,6 +5,16 @@ import { BrowserRouter } from 'react-router-dom';
 import ThreadItem from '../../components/ThreadItem';
 import React from 'react';
 
+/**
+ * test scenarios for ThreadItem component
+ *
+ * - ThreadItem component
+ *   - should render correctly with provided props
+ *   - should truncate long body text and show "Baca selengkapnya" link
+ *   - should call onUpVote when up vote button is clicked
+ *   - should call onDownVote when down vote button is clicked
+ */
+
 // Mock child components
 vi.mock('../../components/UserAvatar', () => ({
   default: ({ user }) => <div data-testid="user-avatar">{user.name}</div>,

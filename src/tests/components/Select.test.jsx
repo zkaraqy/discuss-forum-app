@@ -4,6 +4,17 @@ import userEvent from '@testing-library/user-event';
 import Select from '../../components/Select';
 import React from 'react';
 
+/**
+ * test scenarios for select component
+ *
+ * - Select component
+ *   - should render correctly with minimal props
+ *   - should render correctly with object options
+ *   - should render correctly with custom props
+ *   - should not show default option when showDefaultOption is false
+ *   - should call onChange when a different option is selected
+ */
+
 describe('Select component', () => {
   it('should render correctly with minimal props', () => {
     // Arrange

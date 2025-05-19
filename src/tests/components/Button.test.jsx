@@ -4,6 +4,15 @@ import userEvent from '@testing-library/user-event';
 import Button from '../../components/Button';
 import React from 'react';
 
+/**
+ * test scenarios for button component
+ *
+ * - Button component
+ *   - should render correctly with minimal props
+ *   - should render correctly with all props
+ *   - should call onClick when the button is clicked
+ */
+
 describe('Button component', () => {
   it('should render correctly with minimal props', () => {
     // Arrange

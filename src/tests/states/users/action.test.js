@@ -1,3 +1,18 @@
+/**
+ * test scenarios for users action creators and thunk functions
+ *
+ * - users action creators
+ *   - should create action correctly when receiveUsers called
+ *
+ * - asyncReceiveUsers thunk
+ *   - should dispatch action correctly when data fetching success
+ *   - should dispatch action correctly when data fetching failed
+ *
+ * - asyncRegisterUser thunk
+ *   - should dispatch action correctly when registration success
+ *   - should dispatch action correctly when registration failed
+ */
+
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   ActionType,

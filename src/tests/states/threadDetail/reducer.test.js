@@ -1,3 +1,15 @@
+/**
+ * test scenarios for threadDetailReducer function
+ *
+ * - threadDetailReducer function
+ *   - should return the initial state when no action is provided
+ *   - should return thread detail when given RECEIVE_THREAD_DETAIL action
+ *   - should return null when given CLEAR_THREAD_DETAIL action
+ *   - should add user to upVotesBy and remove from downVotesBy when given UP_VOTE_THREAD_DETAIL action
+ *   - should add user to downVotesBy and remove from upVotesBy when given DOWN_VOTE_THREAD_DETAIL action
+ *   - should remove user from both upVotesBy and downVotesBy when given NEUTRAL_VOTE_THREAD_DETAIL action
+ */
+
 import { describe, it, expect } from 'vitest';
 import threadDetailReducer from '../../../states/threadDetail/reducer';
 import { ActionType } from '../../../states/threadDetail/action';

@@ -1,3 +1,13 @@
+/**
+ * test scenarios for usersReducer function
+ *
+ * - usersReducer function
+ *   - should return the initial state when no action is provided
+ *   - should return the users when given RECEIVE_USERS action
+ *   - should return the current state when given unknown action
+ *   - should replace existing users when given RECEIVE_USERS action
+ */
+
 import { describe, it, expect } from 'vitest';
 import usersReducer from '../../../states/users/reducer';
 import { ActionType } from '../../../states/users/action';
